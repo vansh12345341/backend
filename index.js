@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -11,7 +12,7 @@ const port = 3001;
 
 app.use(cors());
 
-const mongoUri = 'mongodb+srv://vansh:ly7r4Efy2xKRGyaS@cluster0.2hwz3.mongodb.net/';
+const mongoUri = process.env.MONGO_DB_URI;
 
 mongoose.connect(mongoUri);
 
